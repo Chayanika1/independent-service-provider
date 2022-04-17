@@ -8,7 +8,7 @@ import Events3l from '../../Images/Events3l.jpg';
 const CheckOut = () => {
     return (
         <div className='container'>
-            <h1 className='p-5'>Don't Wait For Tomorrow</h1>
+            <h1 className='p-5'>Don't Wait For <span style={{color:'green'}}>Tomorrow</span></h1>
             <div class='row'>
                 <div className='col-lg-4 col-md-6 col-sm-12'>
                     <div class="card mb-3" >

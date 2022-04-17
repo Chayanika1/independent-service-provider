@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# Getting Started with personal gym trainer
+<ul>
+<li>use a frame work like bootstrap</li>
+<li>Useing firebase to create login and email</li>
+<li>create email varification button</li>
+<li>create reset password</li>
+<li>creating a beatutiful website</li>
+
+</ul>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

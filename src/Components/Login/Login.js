@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import {  useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+//import { sendPasswordResetEmail } from 'firebase/auth';
 
 
 
@@ -18,6 +21,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
     const handleEmail = (e) => {
         setEmail(e.target.value)
 
@@ -37,7 +41,18 @@ const Login = () => {
     if (error) {
         errorElement = <p>Error : {error.message}</p>
     }
-    
+    const resetPassword = async () => {
+
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        }
+        else {
+            toast('please enter your email address');
+        }
+    }
+
+
 
 
     return (
@@ -50,16 +65,18 @@ const Login = () => {
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input onBlur={handlePassword} type="password" class="form-control" id="exampleInputPassword1" required/>
+                    <input onBlur={handlePassword} type="password" class="form-control" id="exampleInputPassword1" required />
                 </div>
 
                 {errorElement}
 
                 <button type="submit" class="btn btn-primary">Login</button>
-                <p>new to here? then go to<Link className="p-3"style={{textDecoration:'none'}}to="/Registration">Registration</Link></p>
+                <p>new to here? then go to<Link className="p-3" style={{ textDecoration: 'none' }} to="/Registration">Registration</Link></p>
+                <p>Forget Password? <button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
                 <SocialLogin></SocialLogin>
+                <ToastContainer/>
             </form>
-            
+
 
         </div>
     );
