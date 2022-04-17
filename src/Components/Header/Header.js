@@ -20,7 +20,7 @@ const Header = () => {
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
                             <Link class="nav-link active" aria-current="page" to="/Home">Home</Link>
-                            <Link class="nav-link" to="/CheckOut">CheckOut</Link>
+                            
                             <Link class="nav-link" to="/Registration">Registration</Link>
                             {
                                 user ? <button onClick={ handleSignOut}>Log out</button>:<Link class="nav-link" to="/Login">Login</Link>

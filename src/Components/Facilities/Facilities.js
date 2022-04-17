@@ -1,41 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Facilities = () => {
+const Facilities = (props) => {
+    const { name, description, img } = props.service
     return (
-        <div>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                
-                <div class="col">
-                    <div class="card">
-                        <img src="..." class="card-img-top" alt="..."/>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="..." class="card-img-top" alt="..."/>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                            </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="..." class="card-img-top" alt="..."/>
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            </div>
-                    </div>
+
+        <div class="g-5 rounded-3 col-sm-12 col-md-6 col-lg-4 shadow p-3 mb-5 bg-body rounded'">
+
+
+            <div class="card">
+                <img style={{height:'200px'}}src={img} class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <h5 class="card-title">{name}</h5>
+                    <p class="card-text">{description}</p>
+                   
+                        <Link to="/CheckOut">
+                        <button type="button" class="btn btn-dark"> SEE MORE</button>
+
+                        </Link>
+                        
+                       
+
                 </div>
             </div>
 
+
+
         </div>
+
+
     );
 };
 
