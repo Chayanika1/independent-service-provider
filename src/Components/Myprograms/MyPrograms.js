@@ -8,7 +8,7 @@ import Gym3 from '../../Images/Gym4.jpg';
 const MyPrograms = () => {
     return (
         <div>
-            <h1>My Programs</h1>
+            <h1 className='p-4'>My Programs</h1>
             <div class="row row-cols-1 row-cols-md-2 g-4">
                 <div class="col">
                     <div class="card">
