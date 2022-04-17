@@ -4,6 +4,7 @@ import Carousel from '../Carousel/Carousel';
 import Healthy from '../Healthy/Healthy';
 //import Facilities from '../Facilities/Facilities';
 import Intro from '../Intro/Intro';
+import MyPrograms from '../Myprograms/MyPrograms';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Carousel></Carousel>
             <AllService></AllService>
             <Healthy></Healthy>
+            <MyPrograms></MyPrograms>
            
             
         </div>
