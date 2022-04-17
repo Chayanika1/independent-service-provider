@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const[email,setEmail]=useState('');
@@ -47,7 +49,9 @@ const Login = () => {
                 </div>
                 {errorElement}
                 <button type="submit" class="btn btn-primary">Submit</button>
+                <p>New to Here? then go to<Link className="p-3"style={{textDecoration:'none'}} to="/Registration">Registration</Link></p>  
             </form>
+            <SocialLogin></SocialLogin>
 
         </div>
     );

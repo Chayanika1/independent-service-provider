@@ -25,6 +25,7 @@ const Header = () => {
                             {
                                 user ? <button onClick={ handleSignOut}>Log out</button>:<Link class="nav-link" to="/Login">Login</Link>
                             }
+                           <Link class="nav-link" to="/Reviews">Reviews</Link>
                             
                             <Link class="nav-link" to="/About">About</Link>
                             

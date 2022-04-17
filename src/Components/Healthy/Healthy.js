@@ -3,7 +3,7 @@ import React from 'react';
 const Healthy = () => {
     return (
         <div className='container'>
-            <h1>Why people need a Health Coach</h1>
+            <h1 className='p-4'>Why people need a Health Coach</h1>
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col">
                     <div class="card text-white bg-primary mb-3">

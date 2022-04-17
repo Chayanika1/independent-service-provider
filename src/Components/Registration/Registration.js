@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 
 const Registration = () => {
     const[email,setEmail]=useState('');
     const[password,setPassword]=useState('');
+    const[fixedError,setFixedError] = useState('')
     const[confirmPassword,setConfirmPassword]=useState('');
     const [
         createUserWithEmailAndPassword,
@@ -26,6 +28,7 @@ const Registration = () => {
         setConfirmPassword(e.target.value)
     }
     const handleRegistration=(e)=>{
+        
         createUserWithEmailAndPassword(email,password,confirmPassword);
         e.preventDefault();
 
@@ -61,7 +64,9 @@ const Registration = () => {
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
                 {errorElement}
-                <button type="submit" class="btn btn-primary">Register</button>
+                <button type="submit" class="btn btn-primary mb-4">Register</button>
+                <p>Already have an account? then go to<Link className="p-3"style={{textDecoration:'none'}}to="/Login">Login</Link></p>  
+                <SocialLogin></SocialLogin>
             </form>
             
         </div>
