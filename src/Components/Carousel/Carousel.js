@@ -17,21 +17,21 @@ const Carousel = () => {
                         <img style={{height:'500px'}} src={Banner1} class="d-block w-100" alt=""/>
                             <div class="carousel-caption  d-md-block">
                                 
-                                <h1 className='text-center justify-content-center'>I'LL BURN YOUR FAT</h1>
+                                <h1 style={{marginBottom:'200px'}} className='text-center justify-content-center'>I'LL BURN YOUR FAT</h1>
                             </div>
                     </div>
                     <div class="carousel-item">
                         <img style={{height:'500px'}} src={Banner2} class="d-block w-100" alt=""/>
                             <div class="carousel-caption  d-md-block">
-                                <h5>Second slide label</h5>
-                                <p>Some representative placeholder content for the second slide.</p>
+                                <h1 style={{marginBottom:'200px'}}>BUILD A PERFECT HEALTH GROWTH</h1>
+                                
                             </div>
                     </div>
                     <div class="carousel-item">
                         <img style={{height:'500px'}} src={Banner3} class="d-block w-100" alt=""/>
                             <div class="carousel-caption  d-md-block">
-                                <h5>Third slide label</h5>
-                                <p>Some representative placeholder content for the third slide.</p>
+                                <h1 style={{marginBottom:'200px'}}>STAY HAPPY STAY FREE</h1>
+                                
                             </div>
                     </div>
                 </div>

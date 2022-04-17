@@ -29,7 +29,7 @@ const Login = () => {
         errorElement=<p>{error.message}</p>
     }
     return (
-        <div>
+        <div className='col-lg-6 col-sm-10 mx-auto'>
             <form onSubmit={handleRegistration}>
                 <div class="mb-3">
                     <h1>Please Login</h1>

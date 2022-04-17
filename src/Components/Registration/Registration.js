@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 
@@ -13,6 +14,7 @@ const Registration = () => {
         loading,
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
+      const navigate = useNavigate()
     
     const handelEmail=(e)=>{
         setEmail(e.target.value)
@@ -32,6 +34,9 @@ const Registration = () => {
     let errorElement;
     if(error){
         errorElement=<p>{error.message}</p>
+    }
+    if(user){
+        navigate('/Home')
     }
    
     return (
