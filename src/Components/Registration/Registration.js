@@ -29,6 +29,10 @@ const Registration = () => {
 
 
     }
+    let errorElement;
+    if(error){
+        errorElement=<p>{error.message}</p>
+    }
    
     return (
         <div className='col-lg-6 col-sm-10 mx-auto'>
@@ -51,6 +55,7 @@ const Registration = () => {
                     <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
+                {errorElement}
                 <button type="submit" class="btn btn-primary">Register</button>
             </form>
             

@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Login = () => {
     const[email,setEmail]=useState('');
     const[password,setPassword]=useState('');
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useSignInWithEmailAndPassword(auth);
     const handelEmail=(e)=>{
         setEmail(e.target.value)
     }
@@ -10,10 +18,15 @@ const Login = () => {
         setPassword(e.target.value)
     }
     const handleRegistration=(e)=>{
+        signInWithEmailAndPassword(email,password)
         
         e.preventDefault();
 
 
+    }
+    let errorElement;
+    if(error){
+        errorElement=<p>{error.message}</p>
     }
     return (
         <div>
@@ -32,6 +45,7 @@ const Login = () => {
                     <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
+                {errorElement}
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
 
