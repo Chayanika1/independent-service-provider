@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Facilities.css'
 
 const Facilities = (props) => {
     const { name, description, img,price } = props.service
