@@ -18,7 +18,7 @@ const Footer = () => {
                     <li><i class="fa-solid fa-envelope"></i>info@domain.com</li>
                     <li><i class="fa-solid fa-phone"></i>+123 456 7890</li>
                 </ul>
-                <h6 className='text-center'>&copy; everything is copy right</h6>
+                <h6 className='text-center'> Everything is copy right &copy; 2022</h6>
 
 
 
