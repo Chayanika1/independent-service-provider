@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { sendPasswordResetEmail } from 'firebase/auth';
 //import { sendPasswordResetEmail } from 'firebase/auth';
 
 
@@ -21,7 +22,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+   // const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
     const handleEmail = (e) => {
         setEmail(e.target.value)
 
@@ -41,15 +42,13 @@ const Login = () => {
     if (error) {
         errorElement = <p>Error : {error.message}</p>
     }
-    const resetPassword = async () => {
+    const resetPassword =  () => {
+        sendPasswordResetEmail(auth,email)
+        .then(()=>{
+            toast('Email send')
+        })
 
-        if (email) {
-            await sendPasswordResetEmail(email);
-            toast('Sent email');
-        }
-        else {
-            toast('please enter your email address');
-        }
+        
     }
 
 
@@ -70,7 +69,7 @@ const Login = () => {
 
                 {errorElement}
 
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button onClick={{resetPassword}}type="submit" class="btn btn-primary">Login</button>
                 <p>new to here? then go to<Link className="p-3" style={{ textDecoration: 'none' }} to="/Registration">Registration</Link></p>
                 <p>Forget Password? <button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
                 <SocialLogin></SocialLogin>

@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { sendEmailVerification } from 'firebase/auth';
 
 
 const Registration = () => {
@@ -18,9 +19,9 @@ const Registration = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
-    const [sendEmailVerification, sending] = useSendEmailVerification(
-        auth
-    );
+    //const [sendEmailVerification, sending] = useSendEmailVerification(
+    //    auth
+    //);
     const navigate = useNavigate()
 
     const handelEmail = (e) => {
@@ -49,6 +50,12 @@ const Registration = () => {
     if (user) {
         navigate('/Home')
     }
+    const verify=()=>{
+        sendEmailVerification(auth.currentUser)
+        .then(()=>{
+            toast('Email verification send')
+        })
+    }
 
     return (
         <div className='col-lg-6 col-sm-10 mx-auto'>
@@ -72,10 +79,7 @@ const Registration = () => {
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
                 {errorElement}
-                <button onClick={async () => {
-                    await sendEmailVerification();
-                    toast('Sent email');
-                }} type="submit" class="btn btn-primary mb-4">Register</button>
+                <button onClick={ verify } type="submit" class="btn btn-primary mb-4">Register</button>
                 <p>Already have an account? then go to<Link className="p-3" style={{ textDecoration: 'none' }} to="/Login">Login</Link></p>
                 <SocialLogin></SocialLogin>
                 <ToastContainer/>

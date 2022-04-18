@@ -1,4 +1,5 @@
 import React from 'react';
+import './About.css'
 import mypic from '../../Images/mypic.jpg'
 
 const About = () => {
@@ -7,7 +8,7 @@ const About = () => {
             <div className='col-lg-6 col-md-12 col-sm-12'>
                 <img className="border border-4 rounded-3" style={{ height: '400px' }} src={mypic} alt="" />
             </div>
-            <div className='col-lg-6 col-md-12 col-sm-12'>
+            <div className='col-lg-6 col-md-12 col-sm-12 border border-3 p-4'>
                 <h4>Specialities <i class="fa-solid fa-trophy"></i></h4>
                 <ul>
                     <li>know HTML,CSS JS,BOOTSTRAP.REACT,TAILWIND</li>
@@ -55,7 +56,7 @@ const About = () => {
                     <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style={{width: "75%"}} aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 HTML
-                <div class="progress">
+                <div class="progress mb-3">
                     <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style={{width: "100%"}} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
 
