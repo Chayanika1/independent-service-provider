@@ -5,7 +5,9 @@
 <li>create email varification button</li>
 <li>create reset password</li>
 <li>creating a beatutiful website</li>
-
+<li>using firebase for email, password based login and signin</li>
+<li>using react protected route, if user is new login, they can't go to the protected route</li>
+<li>clicking see more button,user can see more wspecial information</li>
 </ul>
 my live link :  https://gym-trainer-c928c.web.app
 
